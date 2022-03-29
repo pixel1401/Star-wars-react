@@ -1,4 +1,5 @@
 import cn from 'classnames'
+import { getApiResource } from '../utils/network';
 import s from './App.module.css';
 
 
