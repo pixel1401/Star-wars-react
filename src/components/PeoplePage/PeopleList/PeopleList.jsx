@@ -16,4 +16,5 @@ const PeopleList = ({ people }) => {
     );
 }
 
+
 export default PeopleList;

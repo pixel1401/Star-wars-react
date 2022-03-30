@@ -1,34 +1,43 @@
 import { useEffect, useState } from 'react';
 import { API_PEOPLE } from '../../constants/api';
+import { withErrorApi } from '../../hoc/withErrorApi';
 import { getImgPeople, getPeopleId } from '../../service/getPeopleData';
 import { getApiResource } from '../../utils/network';
 import s from './People.module.scss';
 import PeopleList from './PeopleList/PeopleList';
 
 
-const People = () => {
+const People = ({setError}) => {
 
     let [people, setPeople] = useState(null);
+    
 
     const getResource = async (url) => {
         const res = await getApiResource(url);
 
-        let body = res.results.map(({ name, url }) => {
+        if (res) {
+            let body = res.results.map(({ name, url }) => {
 
-            let id = getPeopleId(url);
-            let img = getImgPeople(id);
-            return {
-                name,
-                img,
-                id
-            }
-        })
+                let id = getPeopleId(url);
+                let img = getImgPeople(id);
+                return {
+                    name,
+                    img,
+                    id
+                }
+            })
 
-        setPeople(body);
+            setPeople(body);
+            setError(false);
+        }else {
+            setError(true);
+        }
+
+
     }
 
     useEffect(() => {
-        getResource(API_PEOPLE)
+        getResource(API_PEOPLE + 9)
     }, [])
 
 
@@ -39,4 +48,5 @@ const People = () => {
     );
 }
 
-export default People;
+
+export default withErrorApi(People);

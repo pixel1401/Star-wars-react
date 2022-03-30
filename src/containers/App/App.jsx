@@ -1,6 +1,6 @@
 import cn from 'classnames'
-import PeoplePage from '../PeoplePage';
-import s from './App.module.css';
+import PeoplePage from '../../components/PeoplePage';
+import s from './App.module.scss';
 
 function App() {
   return (
