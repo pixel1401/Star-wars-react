@@ -1,7 +1,4 @@
 
-const BASE_URL = 'https://swapi.dev/api/';
-const PEOPLE = 'people'
-
 export const getApiResource = async (url)=> {
     
     
@@ -20,8 +17,3 @@ export const getApiResource = async (url)=> {
         return false
     }
 }
-
-(async()=> {
-    const body = await getApiResource(BASE_URL+PEOPLE);
-    return console.log(body);
-})();
