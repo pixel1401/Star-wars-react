@@ -1,5 +1,4 @@
 import s from './ErrorMessage.module.scss';
-import style from '../../index.scss';
 
 
 

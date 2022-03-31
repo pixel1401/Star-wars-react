@@ -1,6 +1,8 @@
+@import '@style/common.scss';
+
 
 
 .text {
-    color : var(--color-yellow);
+    color : $color-yellow;
     text-align: center;
 }

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { API_PEOPLE } from '../../constants/api';
-import { withErrorApi } from '../../hoc/withErrorApi';
-import { getImgPeople, getPeopleId } from '../../service/getPeopleData';
-import { getApiResource } from '../../utils/network';
+
+import { API_PEOPLE } from '@constants/api';
+import { withErrorApi } from '@hoc/withErrorApi';
+import { getImgPeople, getPeopleId } from '@service/getPeopleData';
+import { getApiResource } from '@utils/network';
 import s from './People.module.scss';
 import PeopleList from './PeopleList/PeopleList';
 
@@ -37,7 +38,7 @@ const People = ({setError}) => {
     }
 
     useEffect(() => {
-        getResource(API_PEOPLE + 9)
+        getResource(API_PEOPLE)
     }, [])
 
 

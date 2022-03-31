@@ -1,3 +1,4 @@
+@import '@style/common.scss';
 
 .people {
     display: flex;
@@ -24,7 +25,8 @@
     text-align: center;
     margin: 0 auto;
     padding: 10px;
-    background-color: #fff;
+    background-color: $color-white;
     border-bottom-left-radius:3px ;
     border-bottom-right-radius:3px ;
 }
+

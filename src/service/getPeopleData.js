@@ -1,4 +1,4 @@
-import { BASE_URL, HTTPS, IMG_EXTENSION, PEOPLE, URL_PEOPLE_IMG } from "../constants/api";
+import { BASE_URL, HTTPS, IMG_EXTENSION, PEOPLE, URL_PEOPLE_IMG } from "@constants/api";
 
 const getId = (url ,category)=> {
     const id = url

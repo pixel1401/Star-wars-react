@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from '../People.module.scss';
 
 
@@ -16,5 +17,9 @@ const PeopleList = ({ people }) => {
     );
 }
 
+
+PeopleList.propTypes = {
+    people: PropTypes.array,
+}
 
 export default PeopleList;
