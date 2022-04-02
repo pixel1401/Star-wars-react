@@ -1,0 +1,34 @@
+@import '@style/common.scss';
+.header {
+    &__container {
+        padding-top: 15px;
+        width: 100%;
+        display: flex;
+
+        
+    }
+    &__item {
+        text-align: center;
+        padding: 7px 10px;
+        min-width: 70px;
+        border: 2px solid transparent;
+        text-shadow: 0 0 5px $color-white ,
+        0 0 40px $color-blue;
+        color: $color-white;
+        transition: 0.4s;
+        &:not(:first-child) {
+            margin-left: 25px;
+        }
+        
+        &:global(.active) {
+            border-color: $color-blue;
+            border-radius: 3px;
+            color: rgb(105, 105, 202);
+            text-shadow: none;
+        }
+    }
+
+
+    
+}
+

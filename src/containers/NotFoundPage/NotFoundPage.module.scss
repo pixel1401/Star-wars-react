@@ -1,0 +1,20 @@
+@import '@style/common.scss';
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    margin: 15px 0;
+}
+
+.path {
+    color: $color-white;
+    font-size: 18px;
+        & u {
+            text-shadow: 0 0 4px #ddd,
+            0 0 40px $color-blue;
+        }
+}

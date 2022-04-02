@@ -3,18 +3,18 @@
 .people {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     padding-top: 15px;
 }
 
 .item {
     margin: 20px 0;
+    flex: 0 0 20%;
 }
 
 .img {
     display: block;
-    width: 250px;
-    height: 400px;
+    width: 190px;
+    height:260px;
     border-top-left-radius:3px ;
     border-top-right-radius:3px ;
 }
@@ -23,7 +23,9 @@
 .name {
     display: block;
     text-align: center;
-    margin: 0 auto;
+    width: 190px;
+    margin-top: 0;
+    margin-right: auto;
     padding: 10px;
     background-color: $color-white;
     border-bottom-left-radius:3px ;

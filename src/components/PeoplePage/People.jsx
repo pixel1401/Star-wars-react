@@ -6,12 +6,13 @@ import { getImgPeople, getPeopleId } from '@service/getPeopleData';
 import { getApiResource } from '@utils/network';
 import s from './People.module.scss';
 import PeopleList from './PeopleList/PeopleList';
+import { Link } from 'react-router-dom';
 
 
-const People = ({setError}) => {
+const People = ({ setError }) => {
 
     let [people, setPeople] = useState(null);
-    
+
 
     const getResource = async (url) => {
         const res = await getApiResource(url);
@@ -30,7 +31,7 @@ const People = ({setError}) => {
 
             setPeople(body);
             setError(false);
-        }else {
+        } else {
             setError(true);
         }
 
@@ -43,9 +44,13 @@ const People = ({setError}) => {
 
 
     return (
-        <div className={s.people}>
-            {(people) && <PeopleList people={people} />}
-        </div>
+        <>
+            <h2 className={`header__title`}>People Page</h2>
+            <div className={s.people}>
+                {(people) && <PeopleList people={people} />}
+            </div>
+        </>
+
     );
 }
 
