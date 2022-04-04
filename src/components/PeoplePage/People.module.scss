@@ -32,3 +32,38 @@
     border-bottom-right-radius:3px ;
 }
 
+
+.people {
+    &__navigation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__btn{
+        min-width: 100px;
+        margin: 0 25px;
+            & button {
+                cursor: pointer;
+                width: 100%;
+                font-weight: 600;
+                font-size: 15px;
+                background-color: transparent;
+                color: $color-white;
+                padding: 10px;
+                border: 2px solid $color-white;
+                border-radius: 3px;
+                transition: 0.4s;
+                    &:hover:not(:disabled) {
+                        background-color: $color-white;
+                        color: $color-black;
+                            
+                    }
+                    &:disabled {
+                        cursor: default;
+                        opacity: 0.5;
+                    }
+            }
+    }
+    &__next{}
+    &__prev{}
+}

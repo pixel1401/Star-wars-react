@@ -4,7 +4,7 @@ export const HTTPS = 'https://' ;
 export const BASE_URL = 'swapi.dev/api/';
 export const PEOPLE = 'people'
 
-export const API_PEOPLE = HTTPS + BASE_URL + PEOPLE;
+export const API_PEOPLE = HTTPS + BASE_URL + PEOPLE + '?page=';
 
 
 // img 

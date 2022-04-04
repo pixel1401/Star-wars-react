@@ -9,6 +9,13 @@ const getId = (url ,category)=> {
 }
 
 
-export const getPeopleId = url => getId(url , PEOPLE);
+export const getPersonId = url => getId(url , PEOPLE);
 
-export const getImgPeople = id => `${URL_PEOPLE_IMG + id + IMG_EXTENSION}`;
+export const getImgPerson = id => `${URL_PEOPLE_IMG + id + IMG_EXTENSION}`;
+
+
+
+export const getIdUrlPeople = (url)=> {
+    let str = url.match(/\d+$/g)[0];
+    return str;
+} 
