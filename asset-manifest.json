@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Star-wars-react/static/css/main.f7a27cd7.css",
+    "main.js": "/Star-wars-react/static/js/main.86d4121a.js",
+    "static/media/bg.jpg": "/Star-wars-react/static/media/bg.29b25be31315dad3ce4e.jpg",
+    "static/media/han-solo.mp4": "/Star-wars-react/static/media/han-solo.db435084c403f6b37d4d.mp4",
+    "static/media/not-found.jpg": "/Star-wars-react/static/media/not-found.1062f5e41ef989b5973a.jpg",
+    "static/media/lightsaber.svg": "/Star-wars-react/static/media/lightsaber.eb7d4cd665426117002814db79fceef4.svg",
+    "static/media/space-station.svg": "/Star-wars-react/static/media/space-station.7a027c6ec10ba7b5d8c880df5f4e65ea.svg",
+    "static/media/droid.svg": "/Star-wars-react/static/media/droid.de165dd887badb2bdbe9d97b8e527c6f.svg",
+    "index.html": "/Star-wars-react/index.html",
+    "main.f7a27cd7.css.map": "/Star-wars-react/static/css/main.f7a27cd7.css.map",
+    "main.86d4121a.js.map": "/Star-wars-react/static/js/main.86d4121a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7a27cd7.css",
+    "static/js/main.86d4121a.js"
+  ]
+}
