@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { API_PEOPLE } from '@constants/api';
 import { withErrorApi } from '@hoc/withErrorApi';
@@ -9,15 +9,22 @@ import PeopleList from './PeopleList/PeopleList';
 import { Link } from 'react-router-dom';
 import { useQueryParams } from '@hook/useQueryParams';
 import PeopleNavigation from './PeopleNavigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPeople } from '../../store/action';
 
 
 
 const People = ({ setError }) => {
 
-    let [people, setPeople] = useState(null);
-    let [nextPage , setNextPage] = useState(null);
-    let [prevPage , setPrevPage] = useState(null);
-    let [currentPage , setCurrentPage] = useState(null);
+
+
+    let { list: people, currentPage:page } = useSelector(state => state.peopleReducer);
+
+    let dispatchPeople = useDispatch()
+
+    let [nextPage, setNextPage] = useState(null);
+    let [prevPage, setPrevPage] = useState(null);
+    let [currentPage, setCurrentPage] = useState(null);
 
     let [loading, setLoading] = useState(false);
 
@@ -27,8 +34,6 @@ const People = ({ setError }) => {
 
     const getResource = async (url) => {
         const res = await getApiResource(url);
-
-
 
         if (res) {
             let body = res.results.map(({ name, url }) => {
@@ -42,41 +47,42 @@ const People = ({ setError }) => {
                 }
             })
 
-            setPeople(body);
 
-            setNextPage(changeHTTP(res.next));
-            setPrevPage(changeHTTP(res.previous));
-            setCurrentPage(getIdUrlPeople(url));
-            
-            setLoading(false)
-            setError(false);
-            
+            dispatchPeople(getPeople(body))
+
+                setNextPage(changeHTTP(res.next));
+                setPrevPage(changeHTTP(res.previous));
+                setCurrentPage(getIdUrlPeople(url));
+
+                setLoading(false);
+                setError(false);
+
+
         } else {
             setError(true);
         }
-
-
-
     }
 
     useEffect(() => {
-        getResource(API_PEOPLE + queryPage);
-    }, [])
+        getResource(API_PEOPLE + page);
+    }, [page])
+
+    
 
 
     return (
-        <>
+        <>  
             <h2 className={`header__title`}>People Page</h2>
-            
-            <PeopleNavigation 
+
+            <PeopleNavigation
                 nextPage={nextPage}
-                prevPage={prevPage} 
+                prevPage={prevPage}
                 currentPage={currentPage}
                 getResource={getResource}
                 setLoading={setLoading}
                 loading={loading}
             />
-            
+
             <div className={s.people}>
                 {(people) && (
                     <PeopleList people={people} />

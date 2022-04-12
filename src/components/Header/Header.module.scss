@@ -10,7 +10,7 @@
     &__item {
         text-align: center;
         padding: 7px 10px;
-        min-width: 70px;
+        min-width: 100px;
         border: 2px solid transparent;
         text-shadow: 0 0 5px $color-white ,
         0 0 40px $color-blue;
@@ -28,6 +28,33 @@
         }
     }
 
+
+    &__favorite {
+        display: flex;
+        flex: 1 1 100%;
+        align-items: center;
+        justify-content: flex-end;
+            & path {
+                fill: $color-yellow;
+            }
+
+        & a {
+            position: relative;
+        }
+        &_count {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -5px;right: 0;
+            width: 15px;height: 15px;
+            font-size: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: black;
+            z-index: 5;
+        }
+    }
 
     
 }

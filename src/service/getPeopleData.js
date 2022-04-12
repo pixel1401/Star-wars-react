@@ -19,3 +19,12 @@ export const getIdUrlPeople = (url)=> {
     let str = url.match(/\d+$/g)[0];
     return str;
 } 
+
+
+export const getPersonFilms = async (films)=> {
+    let res = await Promise.all(films.map((e)=> {
+        return  fetch(e).then(resp=> resp.json());
+    }))
+
+    return res;
+}

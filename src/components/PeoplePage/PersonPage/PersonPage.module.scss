@@ -1,0 +1,54 @@
+@import "@style/common.scss";
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    color: $color-white;
+}
+.name {
+    flex: 1 1 100%;
+}
+.row {
+}
+.item {
+}
+
+.img {
+    width: 190px;
+    &__box {
+        position: relative;
+    }
+}
+
+.btn {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    & svg {
+        width: 40px;
+        height: 40px;
+        & path {
+            fill: #fff;
+            opacity: 0.7;
+        }
+    }
+
+    &:hover,
+    &:active {
+        & svg path {
+            fill: $color-yellow;
+            opacity: 0.8;
+        }
+    }
+}
+.btn_active path {
+    fill: $color-yellow !important;
+    opacity: 1;
+}

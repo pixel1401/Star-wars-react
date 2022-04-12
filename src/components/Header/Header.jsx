@@ -1,19 +1,31 @@
+import cn from "classnames";
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import s from './Header.module.scss';
 
+
+
 const Header = () => {
+    let page = useSelector(state => state.peopleReducer.currentPage)
+    let favoriteCount = useSelector(state => state.favoriteReducer.persons).length
+
     return (
         <div className={s.header__container}>
-            <NavLink to="/people?page=1" className={s.header__item} >People</NavLink>
             <NavLink to="/" className={s.header__item} >Home</NavLink>
+            <NavLink to={`/people?page=${page}`} className={s.header__item} >People</NavLink>
             <NavLink to="/not-found" className={s.header__item}>Not Found</NavLink>
+            <div className={s.header__favorite}>
+                <NavLink to="/favorite" >
+                    <svg width="24px" height="24px" viewBox="-5.5 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m0 2.089v21.912l6.546-6.26 6.545 6.26v-21.912c-.012-1.156-.952-2.089-2.109-2.089-.026 0-.051 0-.077.001h.004-8.726c-.022-.001-.047-.001-.073-.001-1.158 0-2.098.933-2.109 2.088v.001z" /></svg>
+                    <span className={s.header__favorite_count}>{favoriteCount}</span>
+                </NavLink>
+            </div>
+
         </div>
     );
 }
 
-// Header.propTypes = {
-//     props: PropTypes.array,
-// }
+
 
 export default Header;

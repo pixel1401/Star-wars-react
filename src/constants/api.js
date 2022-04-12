@@ -5,6 +5,7 @@ export const BASE_URL = 'swapi.dev/api/';
 export const PEOPLE = 'people'
 
 export const API_PEOPLE = HTTPS + BASE_URL + PEOPLE + '?page=';
+export const API_PERSON = HTTPS + BASE_URL + PEOPLE;
 
 
 // img 
