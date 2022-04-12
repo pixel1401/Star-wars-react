@@ -8,3 +8,11 @@ $color-blue:rgb(27, 27, 94);
 // }
 
 $df-img:url(~@static/bg.jpg);
+
+
+:export {
+  colorWhite: $color-white;
+  colorYellow: $color-yellow;
+  colorBlack: $color-black;
+  colorBlue: $color-blue;
+}

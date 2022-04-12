@@ -1,6 +1,8 @@
 @import '@style/common.scss';
 .header {
     &__container {
+        display: flex;
+        align-items: center;
         padding-top: 15px;
         width: 100%;
         display: flex;

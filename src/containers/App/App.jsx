@@ -7,6 +7,8 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import PersonPage from '@components/PeoplePage/PersonPage/PersonPage';
 import FavoritePage from '@components/FavoritePage/FavoritePage';
 import s from './App.module.scss';
+import SearchPage from '@components/SearchPage/SearchPage';
+import ErrorMessage from '@components/ErrorMessage/ErrorMessage';
 
 
 
@@ -22,7 +24,9 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/people/:id" element={<PersonPage />} />
-          <Route path="/favorite" element={<FavoritePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/favorite/" element={<FavoritePage />} />
+          <Route path="/fail" element={<ErrorMessage />} />
           <Route path='*' element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
