@@ -12,13 +12,15 @@ import ErrorMessage from '@components/ErrorMessage/ErrorMessage';
 
 
 
+const BASE_NAME = 'Star-wars-react';
+
 
 
 
 function App() {
   return (
     <div className='container'>
-      <BrowserRouter>
+      <BrowserRouter basename={`/${BASE_NAME}/`}>
         <Header/>
         <Routes>
           <Route path='/' element={<Home />}/>

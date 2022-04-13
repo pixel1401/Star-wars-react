@@ -1,5 +1,6 @@
 {
   "name": "star-wars",
+  "homepage": "https://pixel1401.github.io/Star-wars-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +23,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-gh-pages": "gh-pages -d build",
+    "deploy":"npm run build && npm run build-gh-pages"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1"
   }
