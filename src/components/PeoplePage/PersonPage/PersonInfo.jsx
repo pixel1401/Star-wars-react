@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import UiBack from '@components/Ui/UiBack/UiBack';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavoritesAc, delFavoritesAc } from '../../../store/action';
 
@@ -52,7 +52,7 @@ const PersonInfo = ({ person, name, img, }) => {
 
     return (
         <div className={s.box}>
-            <UiBack />
+            
             <h3 className={s.name}>{name}</h3>
             <div className={s.img__box}>
                 <img src={img} alt={name} className={s.img} />

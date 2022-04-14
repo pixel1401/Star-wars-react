@@ -11,6 +11,7 @@ import SearchPage from '@components/SearchPage/SearchPage';
 import ErrorMessage from '@components/ErrorMessage/ErrorMessage';
 
 
+const Hello = 'hello';
 
 const BASE_NAME = 'Star-wars-react';
 
@@ -20,7 +21,7 @@ const BASE_NAME = 'Star-wars-react';
 function App() {
   return (
     <div className='container'>
-      <BrowserRouter basename={`/${BASE_NAME}/`}>
+      <BrowserRouter >
         <Header/>
         <Routes>
           <Route path='/' element={<Home />}/>

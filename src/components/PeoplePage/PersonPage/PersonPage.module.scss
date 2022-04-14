@@ -8,9 +8,24 @@
 .name {
     flex: 1 1 100%;
 }
+
+.container {
+    display: flex;
+}
+
 .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0,0,0,.65);
+    padding: 5px 40px 15px 15px;
+    height: 265px;
+    margin: 0;
+    margin-left: 25px;
 }
 .item {
+    margin: 5px 0;
+    text-shadow:  0 0 2px var(--color-yellow),0 0 40px var(--color-yellow);
 }
 
 .img {
@@ -31,24 +46,53 @@
     cursor: pointer;
     width: 45px;
     height: 45px;
+
     & svg {
         width: 40px;
         height: 40px;
         & path {
-            fill: #fff;
+            fill: rgb(120, 120, 120);
             opacity: 0.7;
+            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
         }
     }
 
     &:hover,
     &:active {
         & svg path {
-            fill: $color-yellow;
-            opacity: 0.8;
+            fill: var(--color-yellow);
+            opacity: 1;
         }
     }
 }
 .btn_active path {
     fill: $color-yellow !important;
-    opacity: 1;
+    opacity: 1 !important;
+}
+
+
+
+.film__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5px 40px 15px 15px;
+    width: fit-content ;
+    margin: 0;
+        & li {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            & div {
+                margin: 0 5px;
+                    &:first-child {
+                        background-color: #f75d83;
+                        padding: 5px;
+                        border-radius: 5px;
+                    }
+                    &:last-child {
+                        text-shadow:  0 0 2px var(--color-yellow),0 0 40px var(--color-yellow);
+                    }
+            }
+        }
 }

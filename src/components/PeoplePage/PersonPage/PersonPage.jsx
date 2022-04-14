@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import UiBack from '@components/Ui/UiBack/UiBack';
 import { getApiResource } from '@utils/network';
 import { API_PERSON } from '@constants/api';
 import { withErrorApi } from '@hoc/withErrorApi';
@@ -16,9 +16,9 @@ const PersonPage = ({ setError }) => {
 
 
     let [person, setPerson] = useState(null);
-    let [personName , setPersonName] = useState(null);
-    let [personImg , setPersonImg] = useState(null);
-    let [personFilm , setPersonFilm] = useState([]);
+    let [personName, setPersonName] = useState(null);
+    let [personImg, setPersonImg] = useState(null);
+    let [personFilm, setPersonFilm] = useState([]);
 
     const { id } = useParams();
     useEffect(() => {
@@ -27,12 +27,12 @@ const PersonPage = ({ setError }) => {
 
             if (res) {
                 setPerson([
-                    { title: 'birth_year', data: res.birth_year },
-                    { title: 'gender', data: res.gender },
-                    { title: 'height', data: res.height },
-                    { title: 'mass', data: res.mass },
-                    { title: 'skin_color', data: res.skin_color },
-                    { title: 'eye_color', data: res.eye_color }
+                    { title: 'Birth Year', data: res.birth_year },
+                    { title: 'Gender', data: res.gender },
+                    { title: 'Height', data: res.height },
+                    { title: 'Mass', data: res.mass },
+                    { title: 'Skin Color', data: res.skin_color },
+                    { title: 'Eye Color', data: res.eye_color }
                 ]);
 
                 setPersonName(res.name)
@@ -50,15 +50,19 @@ const PersonPage = ({ setError }) => {
     return (
         <>
             <h2 className='header__title'>Person</h2>
-            {person && (<PersonInfo 
-                person={person} 
-                name={personName}
-                img={personImg}
-            />)}
+            <UiBack />
+            <div className={s.container}>
+                {person && (<PersonInfo
+                    person={person}
+                    name={personName}
+                    img={personImg}
+                />)}
 
-            {(personFilm.length) &&  <PersonFilm films={personFilm} />}
-            
+                {(personFilm.length) && <PersonFilm films={personFilm} />}
+
+            </div>
         </>
+
     );
 }
 

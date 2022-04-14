@@ -14,3 +14,12 @@ export const CURRENT_PAGE = 'current-page';
 export const getPeople = (people)=> ({type:PEOPLE_LIST , list:people});
 export const setCurrentPage = (page)=> ({type:CURRENT_PAGE , page:page});
 
+
+
+// SEARCH
+
+export const GET_TEXT_SEARCH = 'get-text';
+export const SET_TEXT_SEARCH = 'get-text';
+
+// export const getTextSearchAc = (text)=> ({type:GET_TEXT_SEARCH , text})
+export const setTextSearchAc = (text)=> ({type:SET_TEXT_SEARCH , text})

@@ -1,0 +1,13 @@
+body .loading {
+    width: 15px;
+    height: 15px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+        & input {
+            margin-right: 15px;
+            height: fit-content;
+        }
+}

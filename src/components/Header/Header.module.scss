@@ -37,7 +37,7 @@
         align-items: center;
         justify-content: flex-end;
             & path {
-                fill: $color-yellow;
+                fill: var(--color-yellow);
             }
 
         & a {

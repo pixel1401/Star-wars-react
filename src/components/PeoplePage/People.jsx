@@ -11,6 +11,7 @@ import { useQueryParams } from '@hook/useQueryParams';
 import PeopleNavigation from './PeopleNavigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPeople } from '../../store/action';
+import UiLoading from '../Ui/UiLoading/UiLoading';
 
 
 
@@ -25,8 +26,11 @@ const People = ({ setError }) => {
     let [nextPage, setNextPage] = useState(null);
     let [prevPage, setPrevPage] = useState(null);
     let [currentPage, setCurrentPage] = useState(null);
-
+    
     let [loading, setLoading] = useState(false);
+
+
+    
 
     const query = useQueryParams();
     const queryPage = query.get('page');
@@ -82,11 +86,15 @@ const People = ({ setError }) => {
                 setLoading={setLoading}
                 loading={loading}
             />
-
             <div className={s.people}>
-                {(people) && (
+                {(people.length !== 0) 
+                    ? (
                     <PeopleList people={people} />
-                )}
+                        )
+                    : (
+                        <UiLoading initClass={s.loading__max}/>
+                        )
+                }
             </div>
         </>
 

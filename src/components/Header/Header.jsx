@@ -20,7 +20,7 @@ const Header = () => {
     let page = useSelector(state => state.peopleReducer.currentPage)
     let favoriteCount = useSelector(state => state.favoriteReducer.persons).length
 
-    let [icon, setIcon] = useState(THEME_LIGHT);
+    let [icon, setIcon] = useState(THEME_NEUTRAL);
     const isTheme = useTheme();
 
 
@@ -30,7 +30,7 @@ const Header = () => {
             case THEME_DARK: setIcon(darkImg); break
             case THEME_NEUTRAL: setIcon(neutralImg); break
 
-            default: setIcon(lightImg);
+            default: setIcon(neutralImg);
         }
     } , [isTheme])
 

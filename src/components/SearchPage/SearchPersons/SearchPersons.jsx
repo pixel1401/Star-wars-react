@@ -10,7 +10,7 @@ import s from '../../PeoplePage/People.module.scss';
 const SearchPersons = ({ persons }) => {
     return (
         <div className={s.people}>
-            {(persons) ? (
+            {(persons && persons.length !== 0  ) ? (
                 persons.map(({ name, id, img }) => {
                     return (
                         <Link to={`/${PEOPLE + '/' + id}`} className={s.item}  key={name}>

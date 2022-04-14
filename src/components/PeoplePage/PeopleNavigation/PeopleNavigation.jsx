@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import s from '../People.module.scss';
 import UiButton from '@components/Ui/UiButton/UiButton';
 import { useDispatch } from 'react-redux';
 import { setCurrentPage } from '../../../store/action';
+import UiLoading from '../../Ui/UiLoading/UiLoading';
+import s from '../People.module.scss';
 const PeopleNavigation = ({
     nextPage,
     prevPage,
@@ -38,6 +39,7 @@ const PeopleNavigation = ({
                     disabled={!prevPage || loading}
                 />
             </Link> 
+            {(loading) && (<UiLoading initClass={s.loading__min}/>)}
             <Link to={`/people?page=${+currentPage+1}`}  className={cn(s.people__next, s.people__btn)}>
 
                 <UiButton

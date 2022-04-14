@@ -15,6 +15,10 @@
   --theme-bg-dark:  linear-gradient(to right top, #cf6a55, #955c32, #614a20, #363417, #181c0f);
   --theme-bg-neutral: url(~@static/bg.jpg);
 
+  --color-btn-neu:rgba(224, 224, 81, 0.4);
+  --color-dark:rgba(216, 34, 40, 0.4);
+  --color-light:rgba(41, 229, 45, 0.4);
+
 
   --color-yellow: var(--theme-color-neutral);
   --color-white: #fff;
@@ -60,4 +64,13 @@ body a {
   color: var(--color-yellow);
   text-shadow: 0 0 2px black;
   font-size: 26px;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-yellow);
 }

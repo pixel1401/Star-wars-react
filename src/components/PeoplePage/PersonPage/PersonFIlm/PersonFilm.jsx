@@ -16,13 +16,13 @@ const PersonFilm = ({films}) => {
     },[])
 
     return (
-        <ul>
+        <ul className={s.film__box}>
             {personFilms
                 .sort((a, b) => a.episode_id - b.episode_id)
                 .map((e)=> {
                     return (<li key={e.title}>
+                        <div>Episode  {e.episode_id}</div>
                         <div>{e.title}</div>
-                        <div>{e.episode_id}</div>
                     </li>)
                 })    
             }
